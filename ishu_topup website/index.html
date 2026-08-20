@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO META TAGS -->
+    <title>ISHU TOPUP - Sri Lanka's #1 Free Fire Diamond Top-Up Platform</title>
+    <meta name="description" content="Get instant Free Fire diamonds, memberships, and game top-ups in Sri Lanka at the best prices. ISHU TOPUP is 100% safe, trusted, and fast.">
+    <meta name="keywords" content="Free Fire Topup, Sri Lanka Game Topup, ISHU TOPUP, Free Fire Diamonds Sri Lanka, Cheap Topup SL, Game Credits, Free Fire Membership">
+    <meta name="author" content="ISHU TOPUP">
+    
+    <!-- Open Graph (For Social Media Sharing) -->
+    <meta property="og:title" content="ISHU TOPUP - Sri Lanka's #1 Game Top-Up Platform">
+    <meta property="og:description" content="Instant Free Fire diamond delivery in Sri Lanka. Trusted and safe service.">
+    <meta property="og:type" content="website">
+
+    <style>
+        :root {
+            --primary: #00d2ff;
+            --primary-dark: #0072ff;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-sub: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0d1117;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        /* Top Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: rgba(13, 17, 23, 0.95);
+            backdrop-filter: blur(12px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* PAGE 1: HERO VIEW */
+        #hero-page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(180deg, rgba(13, 17, 23, 0.7) 0%, rgba(13, 17, 23, 1) 100%), 
+                        url('https://freefiremobile-a.akamaihd.net/ffwebsite/images/freefire_bg.jpg') no-repeat center center/cover;
+        }
+
+        .badge {
+            background: rgba(0, 210, 255, 0.15);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+            display: block;
+        }
+
+        .hero p {
+            max-width: 600px;
+            color: #cbd5e1;
+            font-size: 16px;
+            margin-bottom: 50px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+            border: none;
+            transition: 0.3s;
+            margin-top: 15px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 210, 255, 0.6);
+        }
+
+        /* PAGE 2: STORE VIEW */
+        #store-page {
+            display: none;
+            max-width: 1200px;
+            margin: 80px auto 0 auto;
+            padding: 40px 20px 160px 20px;
+            background-color: #f8fafc;
+            color: var(--text-main);
+            border-radius: 24px 24px 0 0;
+            min-height: calc(100vh - 80px);
+            animation: pageFadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes pageFadeIn {
+            from { opacity: 0; transform: scale(0.99); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .game-header-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-bottom: 25px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .custom-logo-badge {
+            width: 85px;
+            height: 85px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #00d2ff, #0072ff);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(0, 114, 255, 0.35);
+            border: 2px solid #ffffff;
+            flex-shrink: 0;
+            text-align: center;
+            padding: 4px;
+        }
+
+        .custom-logo-badge .logo-title {
+            font-size: 15px;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            line-height: 1.1;
+        }
+
+        .custom-logo-badge .logo-sub {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            background: #ffffff;
+            color: #0072ff;
+            padding: 1px 6px;
+            border-radius: 4px;
+            margin-top: 3px;
+        }
+
+        .game-info h2 {
+            font-size: 24px;
+            color: #0f172a;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+        }
+
+        .game-info h2 span {
+            color: var(--primary-dark);
+        }
+
+        .game-info p {
+            color: var(--text-sub);
+            font-size: 13px;
+            margin-top: 4px;
+            font-weight: 600;
+        }
+
+        .player-id-card {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .player-id-card h3 {
+            font-size: 15px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .id-input-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            outline: none;
+            transition: 0.3s;
+            color: #0f172a;
+            background: #fff;
+        }
+
+        .id-input-group input:focus {
+            border-color: #0072ff;
+        }
+
+        .bank-details-card {
+            background: #f0f9ff;
+            border: 2px dashed #0284c7;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .bank-details-card h3 {
+            font-size: 16px;
+            font-weight: 800;
+            color: #0369a1;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .bank-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #bae6fd;
+        }
+
+        .bank-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bank-item label {
+            font-size: 11px;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+
+        .bank-item span {
+            font-size: 15px;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .category-header {
+            font-size: 18px;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 30px 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 4px solid var(--primary-dark);
+            padding-left: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 18px 12px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+            transition: 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 18px -4px rgba(0, 0, 0, 0.08);
+            border-color: #cbd5e1;
+        }
+
+        .card-img {
+            width: 85px;
+            height: 70px;
+            margin: 5px auto 10px auto;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .card-title {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 6px;
+            min-height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-price {
+            font-size: 16px;
+            font-weight: 800;
+            color: #0284c7;
+            margin: 4px 0 10px 0;
+        }
+
+        .qty-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: #f1f5f9;
+            padding: 5px;
+            border-radius: 8px;
+        }
+
+        .qty-btn {
+            width: 26px;
+            height: 26px;
+            background: #3b82f6;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+        }
+
+        .qty-btn:hover {
+            background: #2563eb;
+        }
+
+        .qty-count {
+            font-size: 13px;
+            font-weight: 700;
+            color: #334155;
+            width: 18px;
+        }
+
+        .slip-upload-section {
+            background: #ffffff;
+            border: 2px solid #cbd5e1;
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 35px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .slip-upload-section h3 {
+            font-size: 16px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .slip-upload-section input[type="file"] {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            outline: none;
+            background: #fff;
+            cursor: pointer;
+            color: #0f172a;
+        }
+
+        .file-upload-info {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 6px;
+            font-weight: 600;
+        }
+
+        .cart-summary-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            border-top: 2px solid #e2e8f0;
+            box-shadow: 0 -10px 25px rgba(0,0,0,0.15);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 2000;
+            color: #0f172a;
+        }
+
+        .cart-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-info .item-count {
+            font-size: 12px;
+            color: var(--text-sub);
+            font-weight: 600;
+        }
+
+        .cart-info .total-price {
+            font-size: 20px;
+            font-weight: 900;
+            color: #0284c7;
+        }
+
+        .whatsapp-btn {
+            background: #25d366;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            transition: 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            background: #1eb956;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .card { padding: 14px 8px; }
+            .card-img { width: 70px; height: 55px; }
+            .nav-links { display: none; }
+            .cart-summary-bar { padding: 12px 15px; }
+            .cart-info .total-price { font-size: 17px; }
+            .whatsapp-btn { padding: 10px 16px; font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo" onclick="openHeroPage()">ISHU <span>TOPUP</span></div>
+        <ul class="nav-links">
+            <li><a onclick="openStorePage()">Free Fire Topup</a></li>
+            <li><a onclick="openStorePage()">Memberships</a></li>
+        </ul>
+    </nav>
+
+    <!-- PAGE 1: HERO VIEW -->
+    <section id="hero-page">
+        <div class="hero">
+            <div class="badge">SRI LANKA'S #1 GAME TOP-UP PLATFORM</div>
+            <h1>ISHU <span>TOPUP</span></h1>
+            <p>Premium game top-ups at <b>unbeatable prices</b> — instant delivery, trusted by Sri Lankan gamers.</p>
+            <button class="btn btn-primary" onclick="openStorePage()">⚡ TOP UP NOW</button>
+        </div>
+    </section>
+
+    <!-- PAGE 2: PRICE LIST STORE VIEW -->
+    <section id="store-page">
+        <div class="game-header-card">
+            <div class="custom-logo-badge">
+                <span class="logo-title">ISHU</span>
+                <span class="logo-sub">TOPUP</span>
+            </div>
+            <div class="game-info">
+                <h2>ISHU <span>TOPUP</span></h2>
+                <p>Sri Lanka's #1 Game Top-Up Platform | 100% Safe & Instant Delivery</p>
+            </div>
+        </div>
+
+        <div class="player-id-card">
+            <h3>🎮 Step 1: Enter Free Fire Player ID (UID)</h3>
+            <div class="id-input-group">
+                <input type="text" inputmode="numeric" id="player-id" placeholder="e.g. 1234567890" required>
+            </div>
+        </div>
+
+        <div class="bank-details-card">
+            <h3>🏦 Payment Details (Bank Transfer / Cash Deposit)</h3>
+            <div class="bank-info-grid">
+                <div class="bank-item">
+                    <label>Bank Name</label>
+                    <span>Bank of Ceylon (BOC)</span>
+                </div>
+                <div class="bank-item">
+                    <label>Account Number</label>
+                    <span>96533754</span>
+                </div>
+                <div class="bank-item">
+                    <label>Account Name</label>
+                    <span>M.S.S.Perera</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-header">🎟️ Memberships</div>
+        <div class="grid">
+            <!-- (Items here remain same) -->
+            <div class="card" data-title="Weekly Lite Membership" data-price="130">
+                <img src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/rebate/0000/004/008/logo.png" class="card-img" alt="Weekly Lite">
+                <div class="card-title">Weekly Lite Membership</div>
+                <div class="card-price">Rs. 130</div>
+                <div class="qty-controls">
+                    <button class="qty-btn" onclick="updateQty(this, -1)">-</button>
+                    <span class="qty-count">0</span>
+                    <button class="qty-btn" onclick="updateQty(this, 1)">+</button>
+                </div>
+            </div>
+            <div class="card" data-title="Weekly Membership" data-price="580">
+                <img src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/rebate/0000/000/002/logo.png" class="card-img" alt="Weekly Membership">
+                <div class="card-title">Weekly Membership</div>
+                <div class="card-price">Rs. 580</div>
+                <div class="qty-controls">
+                    <button class="qty-btn" onclick="updateQty(this, -1)">-</button>
+                    <span class="qty-count">0</span>
+                    <button class="qty-btn" onclick="updateQty(this, 1)">+</button>
+                </div>
+            </div>
+            <div class="card" data-title="Monthly Membership" data-price="2750">
+                <img src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/rebate/0000/081/041/logo.png" class="card-img" alt="Monthly Membership">
+                <div class="card-title">Monthly Membership</div>
+                <div class="card-price">Rs. 2,750</div>
+                <div class="qty-controls">
+                    <button class="qty-btn" onclick="updateQty(this, -1)">-</button>
+                    <span class="qty-count">0</span>
+                    <button class="qty-btn" onclick="updateQty(this, 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-header">💎 Diamond Top-Up Packages</div>
+        <div class="grid">
+            <!-- Diamond cards here... -->
+            <div class="card" data-title="25 Diamonds" data-price="70"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">25 Diamonds</div><div class="card-price">Rs. 70</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="50 Diamonds" data-price="130"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">50 Diamonds</div><div class="card-price">Rs. 130</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="115 Diamonds" data-price="260"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">115 Diamonds</div><div class="card-price">Rs. 260</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="240 Diamonds" data-price="520"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">240 Diamonds</div><div class="card-price">Rs. 520</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="355 Diamonds" data-price="780"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">355 Diamonds</div><div class="card-price">Rs. 780</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="480 Diamonds" data-price="1040"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">480 Diamonds</div><div class="card-price">Rs. 1,040</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="610 Diamonds" data-price="1300"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">610 Diamonds</div><div class="card-price">Rs. 1,300</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="850 Diamonds" data-price="1820"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">850 Diamonds</div><div class="card-price">Rs. 1,820</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="1,090 Diamonds" data-price="2340"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">1,090 Diamonds</div><div class="card-price">Rs. 2,340</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="1,240 Diamonds" data-price="2600"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">1,240 Diamonds</div><div class="card-price">Rs. 2,600</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="2,530 Diamonds" data-price="5200"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">2,530 Diamonds</div><div class="card-price">Rs. 5,200</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+        </div>
+
+        <div class="slip-upload-section">
+            <h3>📎 Step 3: Upload Payment Slip (මුදල් ගෙවූ Slip එක Attach කරන්න)</h3>
+            <input type="file" id="payment-slip" accept="image/*">
+            <div class="file-upload-info">💡 ඔබ මුදල් තැන්පත් කළ බැංකු Slip පතේ හෝ App Screenshot එකේ Photo එක මෙහි තෝරන්න.</div>
+        </div>
+
+        <div class="cart-summary-bar">
+            <div class="cart-info">
+                <span class="item-count" id="total-items">Selected Items: 0</span>
+                <span class="total-price" id="total-price">Rs. 0</span>
+            </div>
+            <button class="whatsapp-btn" onclick="sendToWhatsApp()">
+                💬 Buy via WhatsApp
+            </button>
+        </div>
+    </section>
+
+    <script>
+        const whatsappNumber = "94703884811"; 
+        function openStorePage() { document.getElementById('hero-page').style.display = 'none'; document.getElementById('store-page').style.display = 'block'; window.scrollTo(0, 0); }
+        function openHeroPage() { document.getElementById('store-page').style.display = 'none'; document.getElementById('hero-page').style.display = 'flex'; window.scrollTo(0, 0); }
+        function updateQty(btn, val) {
+            let countSpan = btn.parentElement.querySelector('.qty-count');
+            let current = parseInt(countSpan.innerText);
+            let next = current + val;
+            if (next >= 0) { countSpan.innerText = next; calculateTotal(); }
+        }
+        function calculateTotal() {
+            let total = 0, itemsCount = 0;
+            document.querySelectorAll('.card').forEach(card => {
+                let qty = parseInt(card.querySelector('.qty-count').innerText);
+                let price = parseInt(card.getAttribute('data-price'));
+                if (qty > 0) { total += qty * price; itemsCount += qty; }
+            });
+            document.getElementById('total-items').innerText = `Selected Items: ${itemsCount}`;
+            document.getElementById('total-price').innerText = `Rs. ${total.toLocaleString()}`;
+        }
+        function sendToWhatsApp() {
+            let playerId = document.getElementById('player-id').value.trim();
+            let slipInput = document.getElementById('payment-slip');
+            if (!playerId) { alert("කරුණාකර ප්‍රථමයෙන් ඔබේ Player ID (UID) එක ඇතුළත් කරන්න!"); document.getElementById('player-id').focus(); return; }
+            if (slipInput.files.length === 0) { alert("කරුණාකර ගෙවපු Slip එකේ Photo එක Upload කරන්න!"); slipInput.scrollIntoView({ behavior: 'smooth' }); return; }
+            let selectedItems = [], totalBill = 0;
+            document.querySelectorAll('.card').forEach(card => {
+                let qty = parseInt(card.querySelector('.qty-count').innerText);
+                let title = card.getAttribute('data-title'), price = parseInt(card.getAttribute('data-price'));
+                if (qty > 0) { totalBill += qty * price; selectedItems.push(`• ${title} x ${qty} = Rs. ${qty * price}`); }
+            });
+            if (selectedItems.length === 0) { alert("කරුණාකර අවම වශයෙන් එක පැකේජයක් හෝ තෝරන්න!"); return; }
+            let message = `*🛒 NEW ORDER - ISHU TOPUP*\n\n🎮 *Player ID (UID):* ${playerId}\n📎 *Slip:* ${slipInput.files[0].name}\n----------------------------------\n*ORDER ITEMS:*\n${selectedItems.join('\n')}\n----------------------------------\n💰 *TOTAL BILL:* Rs. ${totalBill.toLocaleString()}\n\n✅ *මම මුදල් තැන්පත් කර ඇත.*`;
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
