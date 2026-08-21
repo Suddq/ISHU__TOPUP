@@ -99,7 +99,7 @@
             color: var(--primary);
         }
 
-        /* PAGE 1: HERO VIEW WITH bac.png BACKGROUND & BLUR */
+        /* PAGE 1: HERO VIEW WITH bac.png BACKGROUND */
         #hero-page {
             height: 100vh;
             display: flex;
@@ -112,17 +112,18 @@
             overflow: hidden;
         }
 
-        /* Background Image with Blur Effect */
+        /* Background Image with Blur Effect & Absolute positioning for Mobile */
         #hero-page::before {
             content: '';
             position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            background: linear-gradient(180deg, rgba(13, 17, 23, 0.6) 0%, rgba(13, 17, 23, 0.85) 100%), 
-                        url('bac.png') no-repeat center center/cover;
-            filter: blur(6px); /* මෙතැනින් Blur ප්‍රමාණය අඩු වැඩි කරගත හැක */
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            background: linear-gradient(180deg, rgba(13, 17, 23, 0.5) 0%, rgba(13, 17, 23, 0.8) 100%), 
+                        url('bac.png') no-repeat center center;
+            background-size: cover;
+            filter: blur(4px);
             z-index: -1;
         }
 
