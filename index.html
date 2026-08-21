@@ -454,6 +454,12 @@
             font-weight: 600;
         }
 
+        #upload-status {
+            font-size: 13px;
+            margin-top: 8px;
+            font-weight: 700;
+        }
+
         .cart-summary-bar {
             position: fixed;
             bottom: 0;
@@ -630,8 +636,9 @@
 
         <div class="slip-upload-section">
             <h3>📎 Step 3: Upload Payment Slip (මුදල් ගෙවූ Slip එක Attach කරන්න)</h3>
-            <input type="file" id="payment-slip" accept="image/*">
+            <input type="file" id="payment-slip" accept="image/*" onchange="uploadSlipToHost(this)">
             <div class="file-upload-info">💡 ඔබ මුදල් තැන්පත් කළ බැංකු Slip පතේ හෝ App Screenshot එකේ Photo එක මෙහි තෝරන්න.</div>
+            <div id="upload-status" style="color: #64748b;"></div>
         </div>
 
         <div class="cart-summary-bar">
@@ -647,14 +654,18 @@
 
     <script>
         const whatsappNumber = "94703884811"; 
+        let uploadedSlipUrl = "";
+
         function openStorePage() { document.getElementById('hero-page').style.display = 'none'; document.getElementById('store-page').style.display = 'block'; window.scrollTo(0, 0); }
         function openHeroPage() { document.getElementById('store-page').style.display = 'none'; document.getElementById('hero-page').style.display = 'flex'; window.scrollTo(0, 0); }
+        
         function updateQty(btn, val) {
             let countSpan = btn.parentElement.querySelector('.qty-count');
             let current = parseInt(countSpan.innerText);
             let next = current + val;
             if (next >= 0) { countSpan.innerText = next; calculateTotal(); }
         }
+
         function calculateTotal() {
             let total = 0, itemsCount = 0;
             document.querySelectorAll('.card').forEach(card => {
@@ -665,11 +676,46 @@
             document.getElementById('total-items').innerText = `Selected Items: ${itemsCount}`;
             document.getElementById('total-price').innerText = `Rs. ${total.toLocaleString()}`;
         }
+
+        // Slip එක Image Hosting එකකට Upload කර ලින්ක් එක ලබාගැනීම
+        function uploadSlipToHost(input) {
+            if (input.files && input.files[0]) {
+                let file = input.files[0];
+                let statusDiv = document.getElementById('upload-status');
+                statusDiv.innerText = "⏳ Uploading slip image, please wait...";
+                statusDiv.style.color = "#0284c7";
+
+                let formData = new FormData();
+                formData.append("image", file);
+
+                // ImgBB Public API Key හරහා ස්වයංක්‍රීයව ෆොටෝ එක අප්ලෝඩ් වේ
+                fetch("https://api.imgbb.com/1/upload?key=6d207e0251142516421375d8e75e533d", {
+                    method: "POST",
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        uploadedSlipUrl = data.data.url;
+                        statusDiv.innerText = "✅ Slip uploaded successfully! (රූපය සාර්ථකව සම්බන්ධ විය)";
+                        statusDiv.style.color = "#16a34a";
+                    } else {
+                        statusDiv.innerText = "❌ Upload failed. Please try again or re-select image.";
+                        statusDiv.style.color = "#dc2626";
+                    }
+                })
+                .catch(error => {
+                    statusDiv.innerText = "❌ Network error during upload.";
+                    statusDiv.style.color = "#dc2626";
+                });
+            }
+        }
+
         function sendToWhatsApp() {
             let playerId = document.getElementById('player-id').value.trim();
-            let slipInput = document.getElementById('payment-slip');
             if (!playerId) { alert("කරුණාකර ප්‍රථමයෙන් ඔබේ Player ID (UID) එක ඇතුළත් කරන්න!"); document.getElementById('player-id').focus(); return; }
-            if (slipInput.files.length === 0) { alert("කරුණාකර ගෙවපු Slip එකේ Photo එක Upload කරන්න!"); slipInput.scrollIntoView({ behavior: 'smooth' }); return; }
+            if (!uploadedSlipUrl) { alert("කරුණාකර ගෙවපු Slip එක Upload වී අවසන් වනතුරු තත්පර කිහිපයක් රැඳී සිටින්න හෝ නැවත ෆොටෝ එක තෝරන්න!"); return; }
+            
             let selectedItems = [], totalBill = 0;
             document.querySelectorAll('.card').forEach(card => {
                 let qty = parseInt(card.querySelector('.qty-count').innerText);
@@ -677,7 +723,8 @@
                 if (qty > 0) { totalBill += qty * price; selectedItems.push(`• ${title} x ${qty} = Rs. ${qty * price}`); }
             });
             if (selectedItems.length === 0) { alert("කරුණාකර අවම වශයෙන් එක පැකේජයක් හෝ තෝරන්න!"); return; }
-            let message = `*🛒 NEW ORDER - ISHU TOPUP*\n\n🎮 *Player ID (UID):* ${playerId}\n📎 *Slip:* ${slipInput.files[0].name}\n----------------------------------\n*ORDER ITEMS:*\n${selectedItems.join('\n')}\n----------------------------------\n💰 *TOTAL BILL:* Rs. ${totalBill.toLocaleString()}\n\n✅ *මම මුදල් තැන්පත් කර ඇත.*`;
+            
+            let message = `*🛒 NEW ORDER - ISHU TOPUP*\n\n🎮 *Player ID (UID):* ${playerId}\n📎 *Slip Image Link:* ${uploadedSlipUrl}\n----------------------------------\n*ORDER ITEMS:*\n${selectedItems.join('\n')}\n----------------------------------\n💰 *TOTAL BILL:* Rs. ${totalBill.toLocaleString()}\n\n✅ *මම මුදල් තැන්පත් කර ඇත.*`;
             window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>
