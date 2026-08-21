@@ -42,7 +42,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 5%;
+            padding: 12px 5%;
             background: rgba(13, 17, 23, 0.95);
             backdrop-filter: blur(12px);
             position: fixed;
@@ -52,12 +52,26 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .nav-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
         .logo {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 800;
             color: #ffffff;
             letter-spacing: 1px;
-            cursor: pointer;
         }
 
         .logo span {
@@ -182,39 +196,14 @@
             border: 1px solid #e2e8f0;
         }
 
-        .custom-logo-badge {
+        .header-logo-img {
             width: 85px;
             height: 85px;
-            border-radius: 18px;
-            background: linear-gradient(135deg, #00d2ff, #0072ff);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
+            border-radius: 16px;
+            object-fit: cover;
+            border: 2px solid #0072ff;
             box-shadow: 0 8px 20px rgba(0, 114, 255, 0.35);
-            border: 2px solid #ffffff;
             flex-shrink: 0;
-            text-align: center;
-            padding: 4px;
-        }
-
-        .custom-logo-badge .logo-title {
-            font-size: 15px;
-            font-weight: 900;
-            letter-spacing: 0.5px;
-            line-height: 1.1;
-        }
-
-        .custom-logo-badge .logo-sub {
-            font-size: 10px;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            background: #ffffff;
-            color: #0072ff;
-            padding: 1px 6px;
-            border-radius: 4px;
-            margin-top: 3px;
         }
 
         .game-info h2 {
@@ -454,7 +443,6 @@
             font-weight: 600;
         }
 
-        /* ඔබ ඉල්ලූ 'දැනුම් දීමයි' කොටසේ ස්ට්‍රයිල් එක */
         .notice-box {
             margin-top: 12px;
             background: #fffbeb;
@@ -543,7 +531,10 @@
 
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="logo" onclick="openHeroPage()">ISHU <span>TOPUP</span></div>
+        <div class="logo-container" onclick="openHeroPage()">
+            <img src="Copilot_20260821_172448.png" class="nav-logo" alt="Logo">
+            <div class="logo">ISHU <span>TOPUP</span></div>
+        </div>
         <ul class="nav-links">
             <li><a onclick="openStorePage()">Free Fire Topup</a></li>
             <li><a onclick="openStorePage()">Memberships</a></li>
@@ -563,10 +554,7 @@
     <!-- PAGE 2: STORE VIEW -->
     <section id="store-page">
         <div class="game-header-card">
-            <div class="custom-logo-badge">
-                <span class="logo-title">ISHU</span>
-                <span class="logo-sub">TOPUP</span>
-            </div>
+            <img src="Copilot_20260821_172448.png" class="header-logo-img" alt="Logo">
             <div class="game-info">
                 <h2>ISHU <span>TOPUP</span></h2>
                 <p>Sri Lanka's #1 Game Top-Up Platform | 100% Safe & Instant Delivery</p>
@@ -652,7 +640,6 @@
             <input type="file" id="payment-slip" accept="image/*" onchange="uploadSlipSecure(this)">
             <div class="file-upload-info">💡 ඔබ මුදල් තැන්පත් කළ බැංකු Slip පතේ හෝ App Screenshot එකේ Photo එක මෙහි තෝරන්න.</div>
             
-            <!-- ඔබ ඉල්ලූ දැනුම් දීමයි කොටස මෙන්න -->
             <div class="notice-box">
                 ⚠️ <b>දැනුම් දීමයි:</b> කරුණාකර WhatsApp විවෘත වූ පසු ඔබේ Slip එක ඇතුළත් (Attach) කර එවන්න.
             </div>
@@ -739,7 +726,7 @@
             }
         }
 
-        function sendToWhatsApp() {
+        function sendToWhatsApp`()` {
             let playerId = document.getElementById('player-id').value.trim();
             if (!playerId) { alert("කරුණාකර ප්‍රථමයෙන් ඔබේ Player ID (UID) එක ඇතුළත් කරන්න!"); document.getElementById('player-id').focus(); return; }
             if (!uploadedSlipUrl) { alert("කරුණාකර ඔබේ ගෙවීම් Slip පත (Photo එක) Upload කරන්න!"); return; }
