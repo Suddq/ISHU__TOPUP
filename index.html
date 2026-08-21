@@ -65,6 +65,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--primary);
+            background-color: #1e293b;
         }
 
         .logo {
@@ -110,7 +111,6 @@
                         url('https://freefiremobile-a.akamaihd.net/ffwebsite/images/freefire_bg.jpg') no-repeat center center/cover;
         }
 
-        /* Hero Main Logo Styling */
         .hero-logo {
             width: 100px;
             height: 100px;
@@ -119,6 +119,7 @@
             border: 3px solid var(--primary);
             box-shadow: 0 0 25px rgba(0, 210, 255, 0.5);
             margin-bottom: 15px;
+            background-color: #1e293b;
         }
 
         .badge {
@@ -215,6 +216,7 @@
             border: 2px solid #0072ff;
             box-shadow: 0 8px 20px rgba(0, 114, 255, 0.35);
             flex-shrink: 0;
+            background-color: #1e293b;
         }
 
         .game-info h2 {
@@ -544,7 +546,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo-container" onclick="openHeroPage()">
-            <img src="https://raw.githubusercontent.com/Suddq/ISHU_TOPUP/main/my.png" class="nav-logo" alt="Logo">
+            <img src="https://raw.githubusercontent.com/Suddq/ISHU_TOPUP/main/my.png" class="nav-logo" alt="Logo" onerror="this.src='https://via.placeholder.com/40/00d2ff/ffffff?text=IT'">
             <div class="logo">ISHU <span>TOPUP</span></div>
         </div>
         <ul class="nav-links">
@@ -556,7 +558,7 @@
     <!-- PAGE 1: HERO VIEW -->
     <section id="hero-page">
         <div class="hero">
-            <img src="https://raw.githubusercontent.com/Suddq/ISHU_TOPUP/main/my.png" class="hero-logo" alt="Logo">
+            <img src="https://raw.githubusercontent.com/Suddq/ISHU_TOPUP/main/my.png" class="hero-logo" alt="Logo" onerror="this.src='https://via.placeholder.com/100/00d2ff/ffffff?text=ISHU'">
             <div class="badge">SRI LANKA'S #1 GAME TOP-UP PLATFORM</div>
             <h1>ISHU <span>TOPUP</span></h1>
             <p>Premium game top-ups at <b>unbeatable prices</b> — instant delivery, trusted by Sri Lankan gamers.</p>
@@ -567,7 +569,7 @@
     <!-- PAGE 2: STORE VIEW -->
     <section id="store-page">
         <div class="game-header-card">
-            <img src="https://raw.githubusercontent.com/Suddq/ISHU_TOPUP/main/my.png" class="header-logo-img" alt="Logo">
+            <img src="https://raw.githubusercontent.com/Suddq/ISHU_TOPUP/main/my.png" class="header-logo-img" alt="Logo" onerror="this.src='https://via.placeholder.com/85/0072ff/ffffff?text=ISHU'">
             <div class="game-info">
                 <h2>ISHU <span>TOPUP</span></h2>
                 <p>Sri Lanka's #1 Game Top-Up Platform | 100% Safe & Instant Delivery</p>
@@ -635,17 +637,17 @@
 
         <div class="category-header">💎 Diamond Top-Up Packages</div>
         <div class="grid">
-            <div class="card" data-title="25 Diamonds" data-price="70"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">25 Diamonds</div><div class="card-price">Rs. 70</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="50 Diamonds" data-price="130"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">50 Diamonds</div><div class="card-price">Rs. 130</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="115 Diamonds" data-price="260"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">115 Diamonds</div><div class="card-price">Rs. 260</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="240 Diamonds" data-price="520"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">240 Diamonds</div><div class="card-price">Rs. 520</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="355 Diamonds" data-price="780"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">355 Diamonds</div><div class="card-price">Rs. 780</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="480 Diamonds" data-price="1040"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">480 Diamonds</div><div class="card-price">Rs. 1,040</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="610 Diamonds" data-price="1300"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">610 Diamonds</div><div class="card-price">Rs. 1,300</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="850 Diamonds" data-price="1820"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">850 Diamonds</div><div class="card-price">Rs. 1,820</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="1,090 Diamonds" data-price="2340"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">1,090 Diamonds</div><div class="card-price">Rs. 2,340</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="1,240 Diamonds" data-price="2600"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">1,240 Diamonds</div><div class="card-price">Rs. 2,600</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="2,530 Diamonds" data-price="5200"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">2,530 Diamonds</div><div class="card-price">Rs. 5,200</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="25 Diamonds" data-price="70"><img src="xxxhdpi-removebg-preview.png" class="card-img" onerror="this.src='https://via.placeholder.com/85/0284c7/ffffff?text=25+Dia'"><div class="card-title">25 Diamonds</div><div class="card-price">Rs. 70</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="50 Diamonds" data-price="130"><img src="xxxhdpi-removebg-preview.png" class="card-img" onerror="this.src='https://via.placeholder.com/85/0284c7/ffffff?text=50+Dia'"><div class="card-title">50 Diamonds</div><div class="card-price">Rs. 130</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="115 Diamonds" data-price="260"><img src="xxxhdpi-removebg-preview.png" class="card-img" onerror="this.src='https://via.placeholder.com/85/0284c7/ffffff?text=115+Dia'"><div class="card-title">115 Diamonds</div><div class="card-price">Rs. 260</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="240 Diamonds" data-price="520"><img src="xxxhdpi-removebg-preview.png" class="card-img" onerror="this.src='https://via.placeholder.com/85/0284c7/ffffff?text=240+Dia'"><div class="card-title">240 Diamonds</div><div class="card-price">Rs. 520</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="355 Diamonds" data-price="780"><img src="xxxhdpi-removebg-preview.png" class="card-img" onerror="this.src='https://via.placeholder.com/85/0284c7/ffffff?text=355+Dia'"><div class="card-title">355 Diamonds</div><div class="card-price">Rs. 780</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="480 Diamonds" data-price="1040"><img src="xxxhdpi-removebg-preview.png" class="card-img" onerror="this.src='https://via.placeholder.com/85/0284c7/ffffff?text=480+Dia'"><div class="card-title">480 Diamonds</div><div class="card-price">Rs. 1,040</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="610 Diamonds" data-price="1300"><img src="xxxhdpi-removebg-preview.png" class="card-img" onerror="this.src='https://via.placeholder.com/85/0284c7/ffffff?text=610+Dia'"><div class="card-title">610 Diamonds</div><div class="card-price">Rs. 1,300</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="850 Diamonds" data-price="1820"><img src="xxxhdpi-removebg-preview.png" class="card-img" onerror="this.src='https://via.placeholder.com/85/0284c7/ffffff?text=850+Dia'"><div class="card-title">850 Diamonds</div><div class="card-price">Rs. 1,820</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="1,090 Diamonds" data-price="2340"><img src="xxxhdpi-removebg-preview.png" class="card-img" onerror="this.src='https://via.placeholder.com/85/0284c7/ffffff?text=1090+Dia'"><div class="card-title">1,090 Diamonds</div><div class="card-price">Rs. 2,340</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="1,240 Diamonds" data-price="2600"><img src="xxxhdpi-removebg-preview.png" class="card-img" onerror="this.src='https://via.placeholder.com/85/0284c7/ffffff?text=1240+Dia'"><div class="card-title">1,240 Diamonds</div><div class="card-price">Rs. 2,600</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="2,530 Diamonds" data-price="5200"><img src="xxxhdpi-removebg-preview.png" class="card-img" onerror="this.src='https://via.placeholder.com/85/0284c7/ffffff?text=2530+Dia'"><div class="card-title">2,530 Diamonds</div><div class="card-price">Rs. 5,200</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
         </div>
 
         <div class="slip-upload-section">
