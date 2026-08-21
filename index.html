@@ -59,18 +59,13 @@
             cursor: pointer;
         }
 
-        /* Professional CSS Logo Icon */
-        .nav-logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            font-weight: 900;
-            color: #fff;
+        /* Logo Image Style */
+        .nav-logo-img {
+            width: 42px;
+            height: 42px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
             box-shadow: 0 0 10px rgba(0, 210, 255, 0.4);
         }
 
@@ -117,17 +112,12 @@
                         url('https://freefiremobile-a.akamaihd.net/ffwebsite/images/freefire_bg.jpg') no-repeat center center/cover;
         }
 
-        .hero-logo-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            font-weight: 900;
-            color: #fff;
+        .hero-logo-img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
             box-shadow: 0 0 30px rgba(0, 210, 255, 0.6);
             margin: 0 auto 15px auto;
         }
@@ -218,17 +208,12 @@
             border: 1px solid #e2e8f0;
         }
 
-        .header-logo-icon {
+        .header-logo-img {
             width: 70px;
             height: 70px;
-            background: linear-gradient(135deg, var(--primary-dark), #1e293b);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            font-weight: 900;
-            color: #fff;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--primary-dark);
             box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3);
             flex-shrink: 0;
         }
@@ -559,7 +544,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo-container" onclick="openHeroPage()">
-            <div class="nav-logo-icon">IT</div>
+            <img src="my.png" class="nav-logo-img" alt="Logo">
             <div class="logo">ISHU <span>TOPUP</span></div>
         </div>
         <ul class="nav-links">
@@ -571,7 +556,7 @@
     <!-- PAGE 1: HERO VIEW -->
     <section id="hero-page">
         <div class="hero">
-            <div class="hero-logo-icon">IT</div>
+            <img src="my.png" class="hero-logo-img" alt="Logo">
             <div class="badge">SRI LANKA'S #1 GAME TOP-UP PLATFORM</div>
             <h1>ISHU <span>TOPUP</span></h1>
             <p>Premium game top-ups at <b>unbeatable prices</b> — instant delivery, trusted by Sri Lankan gamers.</p>
@@ -582,7 +567,7 @@
     <!-- PAGE 2: STORE VIEW -->
     <section id="store-page">
         <div class="game-header-card">
-            <div class="header-logo-icon">IT</div>
+            <img src="my.png" class="header-logo-img" alt="Logo">
             <div class="game-info">
                 <h2>ISHU <span>TOPUP</span></h2>
                 <p>Sri Lanka's #1 Game Top-Up Platform | 100% Safe & Instant Delivery</p>
@@ -757,7 +742,7 @@
         function sendToWhatsApp() {
             let playerId = document.getElementById('player-id').value.trim();
             if (!playerId) { alert("කරුණාකර ප්‍රථමයෙන් ඔබේ Player ID (UID) එක ඇතුළත් කරන්න!"); document.getElementById('player-id').focus(); return; }
-            if (!uploadedSlipUrl) { alert("කරුණﺎකර ඔබේ ගෙවීම් Slip පත (Photo එක) Upload කරන්න!"); return; }
+            if (!uploadedSlipUrl) { alert("කරුණාකර ඔබේ ගෙවීම් Slip පත (Photo එක) Upload කරන්න!"); return; }
             
             let selectedItems = [], totalBill = 0;
             document.querySelectorAll('.card').forEach(card => {
