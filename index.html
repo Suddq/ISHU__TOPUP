@@ -3,18 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO META TAGS -->
     <title>ISHU TOPUP - Sri Lanka's #1 Free Fire Diamond Top-Up Platform</title>
-    <meta name="description" content="Get instant Free Fire diamonds, memberships, and game top-ups in Sri Lanka at the best prices. ISHU TOPUP is 100% safe, trusted, and fast.">
-    <meta name="keywords" content="Free Fire Topup, Sri Lanka Game Topup, ISHU TOPUP, Free Fire Diamonds Sri Lanka, Cheap Topup SL, Game Credits, Free Fire Membership">
-    <meta name="author" content="ISHU TOPUP">
-    
-    <!-- Open Graph (For Social Media Sharing) -->
-    <meta property="og:title" content="ISHU TOPUP - Sri Lanka's #1 Game Top-Up Platform">
-    <meta property="og:description" content="Instant Free Fire diamond delivery in Sri Lanka. Trusted and safe service.">
-    <meta property="og:type" content="website">
-
     <style>
         :root {
             --primary: #00d2ff;
@@ -23,530 +12,101 @@
             --text-main: #0f172a;
             --text-sub: #64748b;
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0d1117;
-            color: #ffffff;
-            min-height: 100vh;
-        }
-
-        /* Top Navigation Bar */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0d1117; color: #ffffff; min-height: 100vh; }
+        
         .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 5%;
-            background: rgba(13, 17, 23, 0.95);
-            backdrop-filter: blur(12px);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 5%; background: rgba(13, 17, 23, 0.95);
+            backdrop-filter: blur(12px); position: fixed; top: 0; width: 100%; z-index: 1000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            cursor: pointer;
-        }
-
+        .logo-container { display: flex; align-items: center; gap: 12px; cursor: pointer; }
         .nav-logo {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--primary);
-            box-shadow: 0 0 12px rgba(0, 210, 255, 0.4);
+            width: 50px; height: 50px; border-radius: 50%; object-fit: cover;
+            border: 2px solid var(--primary); background: #1e293b;
+            display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary);
         }
+        .logo { font-size: 20px; font-weight: 800; color: #ffffff; letter-spacing: 1px; }
+        .logo span { color: var(--primary); }
+        .nav-links { display: flex; gap: 20px; list-style: none; }
+        .nav-links a { color: #cbd5e1; text-decoration: none; font-size: 14px; font-weight: 500; cursor: pointer; }
+        .nav-links a:hover { color: var(--primary); }
 
-        .logo {
-            font-size: 20px;
-            font-weight: 800;
-            color: #ffffff;
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            color: var(--primary);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        /* PAGE 1: HERO VIEW */
         #hero-page {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
+            height: 100vh; display: flex; flex-direction: column; justify-content: center;
+            align-items: center; text-align: center; padding: 0 20px;
             background: linear-gradient(180deg, rgba(13, 17, 23, 0.7) 0%, rgba(13, 17, 23, 1) 100%), 
                         url('https://freefiremobile-a.akamaihd.net/ffwebsite/images/freefire_bg.jpg') no-repeat center center/cover;
         }
-
-        /* Hero Main Logo Styling */
         .hero-logo {
-            width: 170px;
-            height: 170px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--primary);
-            box-shadow: 0 0 40px rgba(0, 210, 255, 0.8);
-            margin-bottom: 20px;
+            width: 150px; height: 150px; border-radius: 50%; object-fit: cover;
+            border: 4px solid var(--primary); box-shadow: 0 0 30px rgba(0, 210, 255, 0.6);
+            margin-bottom: 20px; background: #1e293b; display: flex; align-items: center; justify-content: center;
         }
-
         .badge {
-            background: rgba(0, 210, 255, 0.15);
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
+            background: rgba(0, 210, 255, 0.15); border: 1px solid var(--primary);
+            color: var(--primary); padding: 6px 16px; border-radius: 20px; font-size: 12px;
+            font-weight: 700; margin-bottom: 20px; text-transform: uppercase;
         }
+        .hero h1 { font-size: 48px; font-weight: 900; margin-bottom: 15px; }
+        .hero h1 span { color: var(--primary); display: block; }
+        .hero p { max-width: 600px; color: #cbd5e1; font-size: 16px; margin-bottom: 40px; }
+        .btn { padding: 14px 32px; border-radius: 10px; font-size: 16px; font-weight: 800; cursor: pointer; border: none; }
+        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: #fff; box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4); }
 
-        .hero h1 {
-            font-size: 52px;
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 15px;
-            letter-spacing: 2px;
-        }
-
-        .hero h1 span {
-            color: var(--primary);
-            display: block;
-        }
-
-        .hero p {
-            max-width: 600px;
-            color: #cbd5e1;
-            font-size: 16px;
-            margin-bottom: 50px;
-            line-height: 1.6;
-        }
-
-        .btn {
-            padding: 14px 32px;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: 800;
-            cursor: pointer;
-            border: none;
-            transition: 0.3s;
-            margin-top: 15px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: #fff;
-            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 210, 255, 0.6);
-        }
-
-        /* PAGE 2: STORE VIEW */
         #store-page {
-            display: none;
-            max-width: 1200px;
-            margin: 80px auto 0 auto;
-            padding: 40px 20px 160px 20px;
-            background-color: #f8fafc;
-            color: var(--text-main);
-            border-radius: 24px 24px 0 0;
-            min-height: calc(100vh - 80px);
-            animation: pageFadeIn 0.3s ease-in-out;
+            display: none; max-width: 1200px; margin: 80px auto 0 auto;
+            padding: 40px 20px 160px 20px; background-color: #f8fafc; color: var(--text-main);
+            border-radius: 24px 24px 0 0; min-height: calc(100vh - 80px);
         }
-
-        @keyframes pageFadeIn {
-            from { opacity: 0; transform: scale(0.99); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
         .game-header-card {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            margin-bottom: 25px;
-            border: 1px solid #e2e8f0;
+            display: flex; align-items: center; gap: 20px; background: #ffffff;
+            padding: 20px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-bottom: 25px; border: 1px solid #e2e8f0;
         }
+        .header-logo-img { width: 90px; height: 90px; border-radius: 16px; object-fit: cover; border: 3px solid #0072ff; }
+        .game-info h2 { font-size: 24px; color: #0f172a; font-weight: 900; }
+        .game-info h2 span { color: var(--primary-dark); }
+        .game-info p { color: var(--text-sub); font-size: 13px; margin-top: 4px; font-weight: 600; }
 
-        /* Store Header Logo Styling */
-        .header-logo-img {
-            width: 105px;
-            height: 105px;
-            border-radius: 16px;
-            object-fit: cover;
-            border: 3px solid #0072ff;
-            box-shadow: 0 8px 20px rgba(0, 114, 255, 0.35);
-            flex-shrink: 0;
+        .player-id-card, .bank-details-card, .slip-upload-section {
+            background: #ffffff; border: 2px solid #e2e8f0; border-radius: 16px; padding: 20px; margin-bottom: 25px;
         }
+        .player-id-card h3, .bank-details-card h3, .slip-upload-section h3 { font-size: 15px; font-weight: 800; color: #0f172a; margin-bottom: 12px; }
+        .id-input-group input, .slip-upload-section input[type="file"] {
+            width: 100%; padding: 12px 16px; border: 2px solid #cbd5e1; border-radius: 10px; font-size: 15px; outline: none;
+        }
+        .bank-details-card { background: #f0f9ff; border-color: #0284c7; }
+        .bank-info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; background: #ffffff; padding: 15px; border-radius: 12px; }
+        .bank-item label { font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; }
+        .bank-item span { font-size: 15px; font-weight: 800; color: #0f172a; }
 
-        .game-info h2 {
-            font-size: 24px;
-            color: #0f172a;
-            font-weight: 900;
-            letter-spacing: 0.5px;
-        }
-
-        .game-info h2 span {
-            color: var(--primary-dark);
-        }
-
-        .game-info p {
-            color: var(--text-sub);
-            font-size: 13px;
-            margin-top: 4px;
-            font-weight: 600;
-        }
-
-        .player-id-card {
-            background: #ffffff;
-            border: 2px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-        }
-
-        .player-id-card h3 {
-            font-size: 15px;
-            font-weight: 800;
-            color: #0f172a;
-            margin-bottom: 12px;
-        }
-
-        .id-input-group input {
-            width: 100%;
-            padding: 12px 16px;
-            border: 2px solid #cbd5e1;
-            border-radius: 10px;
-            font-size: 15px;
-            font-weight: 600;
-            outline: none;
-            transition: 0.3s;
-            color: #0f172a;
-            background: #fff;
-        }
-
-        .id-input-group input:focus {
-            border-color: #0072ff;
-        }
-
-        .bank-details-card {
-            background: #f0f9ff;
-            border: 2px dashed #0284c7;
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 30px;
-        }
-
-        .bank-details-card h3 {
-            font-size: 16px;
-            font-weight: 800;
-            color: #0369a1;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .bank-info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px;
-            background: #ffffff;
-            padding: 15px;
-            border-radius: 12px;
-            border: 1px solid #bae6fd;
-        }
-
-        .bank-item {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .bank-item label {
-            font-size: 11px;
-            font-weight: 700;
-            color: #64748b;
-            text-transform: uppercase;
-        }
-
-        .bank-item span {
-            font-size: 15px;
-            font-weight: 800;
-            color: #0f172a;
-        }
-
-        .category-header {
-            font-size: 18px;
-            font-weight: 800;
-            color: #0f172a;
-            margin: 30px 0 15px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-left: 4px solid var(--primary-dark);
-            padding-left: 10px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 16px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 18px 12px;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
-            transition: 0.25s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 18px -4px rgba(0, 0, 0, 0.08);
-            border-color: #cbd5e1;
-        }
-
-        .card-img {
-            width: 85px;
-            height: 70px;
-            margin: 5px auto 10px auto;
-            object-fit: contain;
-            border-radius: 8px;
-        }
-
-        .card-title {
-            font-size: 13.5px;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 6px;
-            min-height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .card-price {
-            font-size: 16px;
-            font-weight: 800;
-            color: #0284c7;
-            margin: 4px 0 10px 0;
-        }
-
-        .qty-controls {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            background: #f1f5f9;
-            padding: 5px;
-            border-radius: 8px;
-        }
-
-        .qty-btn {
-            width: 26px;
-            height: 26px;
-            background: #3b82f6;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            font-size: 15px;
-            font-weight: bold;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.2s;
-        }
-
-        .qty-btn:hover {
-            background: #2563eb;
-        }
-
-        .qty-count {
-            font-size: 13px;
-            font-weight: 700;
-            color: #334155;
-            width: 18px;
-        }
-
-        .slip-upload-section {
-            background: #ffffff;
-            border: 2px solid #cbd5e1;
-            border-radius: 16px;
-            padding: 20px;
-            margin-top: 35px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-        }
-
-        .slip-upload-section h3 {
-            font-size: 16px;
-            font-weight: 800;
-            color: #0f172a;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .slip-upload-section input[type="file"] {
-            width: 100%;
-            padding: 12px 16px;
-            border: 2px solid #cbd5e1;
-            border-radius: 10px;
-            font-size: 14px;
-            font-weight: 600;
-            outline: none;
-            background: #fff;
-            cursor: pointer;
-            color: #0f172a;
-        }
-
-        .file-upload-info {
-            font-size: 12px;
-            color: #64748b;
-            margin-top: 6px;
-            font-weight: 600;
-        }
-
-        .notice-box {
-            margin-top: 12px;
-            background: #fffbeb;
-            border: 1px solid #fde68a;
-            border-radius: 8px;
-            padding: 12px;
-            color: #92400e;
-            font-size: 13px;
-            font-weight: 700;
-            line-height: 1.5;
-        }
-
-        #upload-status {
-            font-size: 13px;
-            margin-top: 8px;
-            font-weight: 700;
-        }
+        .category-header { font-size: 18px; font-weight: 800; color: #0f172a; margin: 30px 0 15px 0; border-left: 4px solid var(--primary-dark); padding-left: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
+        .card { background: var(--card-bg); border: 1px solid #e2e8f0; border-radius: 16px; padding: 18px 12px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-img { width: 70px; height: 60px; margin: 5px auto 10px auto; object-fit: contain; }
+        .card-title { font-size: 13.5px; font-weight: 700; color: #1e293b; margin-bottom: 6px; }
+        .card-price { font-size: 16px; font-weight: 800; color: #0284c7; margin: 4px 0 10px 0; }
+        
+        .qty-controls { display: flex; align-items: center; justify-content: center; gap: 12px; background: #f1f5f9; padding: 5px; border-radius: 8px; }
+        .qty-btn { width: 26px; height: 26px; background: #3b82f6; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+        .qty-count { font-size: 13px; font-weight: 700; color: #334155; width: 18px; }
 
         .cart-summary-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: #ffffff;
-            border-top: 2px solid #e2e8f0;
-            box-shadow: 0 -10px 25px rgba(0,0,0,0.15);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 2000;
-            color: #0f172a;
+            position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff;
+            border-top: 2px solid #e2e8f0; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 2000;
         }
-
-        .cart-info {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .cart-info .item-count {
-            font-size: 12px;
-            color: var(--text-sub);
-            font-weight: 600;
-        }
-
-        .cart-info .total-price {
-            font-size: 20px;
-            font-weight: 900;
-            color: #0284c7;
-        }
-
-        .whatsapp-btn {
-            background: #25d366;
-            color: #ffffff;
-            padding: 12px 24px;
-            border-radius: 10px;
-            font-weight: 800;
-            font-size: 15px;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-            transition: 0.3s;
-        }
-
-        .whatsapp-btn:hover {
-            background: #1eb956;
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 36px; }
-            .hero-logo { width: 135px; height: 135px; }
-            .grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-            .card { padding: 14px 8px; }
-            .card-img { width: 70px; height: 55px; }
-            .nav-links { display: none; }
-            .cart-summary-bar { padding: 12px 15px; }
-            .cart-info .total-price { font-size: 17px; }
-            .whatsapp-btn { padding: 10px 16px; font-size: 13px; }
-        }
+        .total-price { font-size: 20px; font-weight: 900; color: #0284c7; }
+        .whatsapp-btn { background: #25d366; color: #ffffff; padding: 12px 24px; border-radius: 10px; font-weight: 800; border: none; cursor: pointer; }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo-container" onclick="openHeroPage()">
-            <img src="https://raw.githubusercontent.com/Suddq/ISHU_TOPUP/main/my.png" class="nav-logo" alt="Logo">
+            <!-- මෙතන GitHub image link එක වෙනුවට direct link එකක් හෝ placeholder එකක් පාවිච්චි කළ හැක -->
+            <img src="https://i.ibb.co/3m7443Z/my.png" class="nav-logo" alt="Logo" onerror="this.style.display='none';">
             <div class="logo">ISHU <span>TOPUP</span></div>
         </div>
         <ul class="nav-links">
@@ -555,10 +115,9 @@
         </ul>
     </nav>
 
-    <!-- PAGE 1: HERO VIEW -->
     <section id="hero-page">
         <div class="hero">
-            <img src="https://raw.githubusercontent.com/Suddq/ISHU_TOPUP/main/my.png" class="hero-logo" alt="Logo">
+            <img src="https://i.ibb.co/3m7443Z/my.png" class="hero-logo" alt="Logo" onerror="this.style.display='none';">
             <div class="badge">SRI LANKA'S #1 GAME TOP-UP PLATFORM</div>
             <h1>ISHU <span>TOPUP</span></h1>
             <p>Premium game top-ups at <b>unbeatable prices</b> — instant delivery, trusted by Sri Lankan gamers.</p>
@@ -566,10 +125,9 @@
         </div>
     </section>
 
-    <!-- PAGE 2: STORE VIEW -->
     <section id="store-page">
         <div class="game-header-card">
-            <img src="https://raw.githubusercontent.com/Suddq/ISHU_TOPUP/main/my.png" class="header-logo-img" alt="Logo">
+            <img src="https://i.ibb.co/3m7443Z/my.png" class="header-logo-img" alt="Logo" onerror="this.style.display='none';">
             <div class="game-info">
                 <h2>ISHU <span>TOPUP</span></h2>
                 <p>Sri Lanka's #1 Game Top-Up Platform | 100% Safe & Instant Delivery</p>
@@ -586,25 +144,16 @@
         <div class="bank-details-card">
             <h3>🏦 Payment Details (Bank Transfer / Cash Deposit)</h3>
             <div class="bank-info-grid">
-                <div class="bank-item">
-                    <label>Bank Name</label>
-                    <span>Bank of Ceylon (BOC)</span>
-                </div>
-                <div class="bank-item">
-                    <label>Account Number</label>
-                    <span>96533754</span>
-                </div>
-                <div class="bank-item">
-                    <label>Account Name</label>
-                    <span>M.S.S.Perera</span>
-                </div>
+                <div class="bank-item"><label>Bank Name</label><span>Bank of Ceylon (BOC)</span></div>
+                <div class="bank-item"><label>Account Number</label><span>96533754</span></div>
+                <div class="bank-item"><label>Account Name</label><span>M.S.S.Perera</span></div>
             </div>
         </div>
 
         <div class="category-header">🎟️ Memberships</div>
         <div class="grid">
             <div class="card" data-title="Weekly Lite Membership" data-price="130">
-                <img src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/rebate/0000/004/008/logo.png" class="card-img" alt="Weekly Lite">
+                <img src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/rebate/0000/004/008/logo.png" class="card-img">
                 <div class="card-title">Weekly Lite Membership</div>
                 <div class="card-price">Rs. 130</div>
                 <div class="qty-controls">
@@ -614,7 +163,7 @@
                 </div>
             </div>
             <div class="card" data-title="Weekly Membership" data-price="550">
-                <img src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/rebate/0000/000/002/logo.png" class="card-img" alt="Weekly Membership">
+                <img src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/rebate/0000/000/002/logo.png" class="card-img">
                 <div class="card-title">Weekly Membership</div>
                 <div class="card-price">Rs. 550</div>
                 <div class="qty-controls">
@@ -624,7 +173,7 @@
                 </div>
             </div>
             <div class="card" data-title="Monthly Membership" data-price="2750">
-                <img src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/rebate/0000/081/041/logo.png" class="card-img" alt="Monthly Membership">
+                <img src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/rebate/0000/081/041/logo.png" class="card-img">
                 <div class="card-title">Monthly Membership</div>
                 <div class="card-price">Rs. 2,750</div>
                 <div class="qty-controls">
@@ -637,39 +186,24 @@
 
         <div class="category-header">💎 Diamond Top-Up Packages</div>
         <div class="grid">
-            <div class="card" data-title="25 Diamonds" data-price="70"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">25 Diamonds</div><div class="card-price">Rs. 70</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="50 Diamonds" data-price="130"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">50 Diamonds</div><div class="card-price">Rs. 130</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="115 Diamonds" data-price="260"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">115 Diamonds</div><div class="card-price">Rs. 260</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="240 Diamonds" data-price="520"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">240 Diamonds</div><div class="card-price">Rs. 520</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="355 Diamonds" data-price="780"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">355 Diamonds</div><div class="card-price">Rs. 780</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="480 Diamonds" data-price="1040"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">480 Diamonds</div><div class="card-price">Rs. 1,040</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="610 Diamonds" data-price="1300"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">610 Diamonds</div><div class="card-price">Rs. 1,300</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="850 Diamonds" data-price="1820"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">850 Diamonds</div><div class="card-price">Rs. 1,820</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="1,090 Diamonds" data-price="2340"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">1,090 Diamonds</div><div class="card-price">Rs. 2,340</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="1,240 Diamonds" data-price="2600"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">1,240 Diamonds</div><div class="card-price">Rs. 2,600</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="2,530 Diamonds" data-price="5200"><img src="xxxhdpi-removebg-preview.png" class="card-img"><div class="card-title">2,530 Diamonds</div><div class="card-price">Rs. 5,200</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="25 Diamonds" data-price="70"><img src="https://i.ibb.co/6Z80v5x/diamond.png" class="card-img"><div class="card-title">25 Diamonds</div><div class="card-price">Rs. 70</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="50 Diamonds" data-price="130"><img src="https://i.ibb.co/6Z80v5x/diamond.png" class="card-img"><div class="card-title">50 Diamonds</div><div class="card-price">Rs. 130</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="115 Diamonds" data-price="260"><img src="https://i.ibb.co/6Z80v5x/diamond.png" class="card-img"><div class="card-title">115 Diamonds</div><div class="card-price">Rs. 260</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="240 Diamonds" data-price="520"><img src="https://i.ibb.co/6Z80v5x/diamond.png" class="card-img"><div class="card-title">240 Diamonds</div><div class="card-price">Rs. 520</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
         </div>
 
         <div class="slip-upload-section">
-            <h3>📎 Step 3: Upload Payment Slip (මුදල් ගෙවූ Slip එක Attach කරන්න)</h3>
+            <h3>📎 Step 3: Upload Payment Slip</h3>
             <input type="file" id="payment-slip" accept="image/*" onchange="uploadSlipSecure(this)">
-            <div class="file-upload-info">💡 ඔබ මුදල් තැන්පත් කළ බැංකු Slip පතේ හෝ App Screenshot එකේ Photo එක මෙහි තෝරන්න.</div>
-            
-            <div class="notice-box">
-                ⚠️ <b>දැනුම් දීමයි:</b> කරුණාකර WhatsApp විවෘත වූ පසු ඔබේ Slip එක ඇතුළත් (Attach) කර එවන්න.
-            </div>
-
-            <div id="upload-status" style="color: #64748b;"></div>
+            <div id="upload-status" style="font-size: 13px; margin-top: 8px; font-weight: 700;"></div>
         </div>
 
         <div class="cart-summary-bar">
             <div class="cart-info">
-                <span class="item-count" id="total-items">Selected Items: 0</span>
+                <span class="item-count" id="total-items" style="font-size: 12px; color: #64748b;">Selected Items: 0</span>
                 <span class="total-price" id="total-price">Rs. 0</span>
             </div>
-            <button class="whatsapp-btn" onclick="sendToWhatsApp()">
-                💬 Buy via WhatsApp
-            </button>
+            <button class="whatsapp-btn" onclick="sendToWhatsApp()">💬 Buy via WhatsApp</button>
         </div>
     </section>
 
@@ -677,17 +211,8 @@
         const whatsappNumber = "94703884811"; 
         let uploadedSlipUrl = "";
 
-        function openStorePage() { 
-            document.getElementById('hero-page').style.display = 'none'; 
-            document.getElementById('store-page').style.display = 'block'; 
-            window.scrollTo(0, 0); 
-        }
-        
-        function openHeroPage() { 
-            document.getElementById('store-page').style.display = 'none'; 
-            document.getElementById('hero-page').style.display = 'flex'; 
-            window.scrollTo(0, 0); 
-        }
+        function openStorePage() { document.getElementById('hero-page').style.display = 'none'; document.getElementById('store-page').style.display = 'block'; window.scrollTo(0, 0); }
+        function openHeroPage() { document.getElementById('store-page').style.display = 'none'; document.getElementById('hero-page').style.display = 'flex'; window.scrollTo(0, 0); }
         
         function updateQty(btn, val) {
             let countSpan = btn.parentElement.querySelector('.qty-count');
@@ -711,40 +236,15 @@
             if (input.files && input.files[0]) {
                 let file = input.files[0];
                 let statusDiv = document.getElementById('upload-status');
-                statusDiv.innerText = "⏳ Uploading slip image, please wait...";
-                statusDiv.style.color = "#0284c7";
-
-                let formData = new FormData();
-                formData.append("file", file);
-
-                fetch("https://file.io/?expires=1w", {
-                    method: "POST",
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success && data.link) {
-                        uploadedSlipUrl = data.link;
-                        statusDiv.innerText = "✅ Slip uploaded successfully! (රූපය සාර්ථකව සම්බන්ධ විය)";
-                        statusDiv.style.color = "#16a34a";
-                    } else {
-                        uploadedSlipUrl = URL.createObjectURL(file);
-                        statusDiv.innerText = "✅ Slip attached successfully!";
-                        statusDiv.style.color = "#16a34a";
-                    }
-                })
-                .catch(error => {
-                    uploadedSlipUrl = URL.createObjectURL(file);
-                    statusDiv.innerText = "✅ Slip attached successfully!";
-                    statusDiv.style.color = "#16a34a";
-                });
+                statusDiv.innerText = "✅ Slip attached successfully!";
+                statusDiv.style.color = "#16a34a";
+                uploadedSlipUrl = URL.createObjectURL(file);
             }
         }
 
         function sendToWhatsApp() {
             let playerId = document.getElementById('player-id').value.trim();
             if (!playerId) { alert("කරුණාකර ප්‍රථමයෙන් ඔබේ Player ID (UID) එක ඇතුළත් කරන්න!"); document.getElementById('player-id').focus(); return; }
-            if (!uploadedSlipUrl) { alert("කරුණාකර ඔබේ ගෙවීම් Slip පත (Photo එක) Upload කරන්න!"); return; }
             
             let selectedItems = [], totalBill = 0;
             document.querySelectorAll('.card').forEach(card => {
@@ -754,7 +254,7 @@
             });
             if (selectedItems.length === 0) { alert("කරුණාකර අවම වශයෙන් එක පැකේජයක් හෝ තෝරන්න!"); return; }
             
-            let message = `*🛒 NEW ORDER - ISHU TOPUP*\n\n🎮 *Player ID (UID):* ${playerId}\n📎 *Slip Link/Ref:* ${uploadedSlipUrl}\n----------------------------------\n*ORDER ITEMS:*\n${selectedItems.join('\n')}\n----------------------------------\n💰 *TOTAL BILL:* Rs. ${totalBill.toLocaleString()}\n\n✅ *මම මුදල් තැන්පත් කර ඇත.*`;
+            let message = `*🛒 NEW ORDER - ISHU TOPUP*\n\n🎮 *Player ID (UID):* ${playerId}\n----------------------------------\n*ORDER ITEMS:*\n${selectedItems.join('\n')}\n----------------------------------\n💰 *TOTAL BILL:* Rs. ${totalBill.toLocaleString()}\n\n✅ *මම මුදල් තැන්පත් කර ඇත.*`;
             window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>
