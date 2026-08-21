@@ -99,7 +99,7 @@
             color: var(--primary);
         }
 
-        /* PAGE 1: HERO VIEW */
+        /* PAGE 1: HERO VIEW WITH bac.png BACKGROUND & BLUR */
         #hero-page {
             height: 100vh;
             display: flex;
@@ -108,8 +108,22 @@
             align-items: center;
             text-align: center;
             padding: 0 20px;
-            background: linear-gradient(180deg, rgba(13, 17, 23, 0.7) 0%, rgba(13, 17, 23, 1) 100%), 
-                        url('https://freefiremobile-a.akamaihd.net/ffwebsite/images/freefire_bg.jpg') no-repeat center center/cover;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background Image with Blur Effect */
+        #hero-page::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(180deg, rgba(13, 17, 23, 0.6) 0%, rgba(13, 17, 23, 0.85) 100%), 
+                        url('bac.png') no-repeat center center/cover;
+            filter: blur(6px); /* මෙතැනින් Blur ප්‍රමාණය අඩු වැඩි කරගත හැක */
+            z-index: -1;
         }
 
         .hero-logo-img {
