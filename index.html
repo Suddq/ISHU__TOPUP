@@ -636,7 +636,7 @@
 
         <div class="slip-upload-section">
             <h3>📎 Step 3: Upload Payment Slip (මුදල් ගෙවූ Slip එක Attach කරන්න)</h3>
-            <input type="file" id="payment-slip" accept="image/*" onchange="uploadSlipToHost(this)">
+            <input type="file" id="payment-slip" accept="image/*" onchange="uploadSlipToImgBB(this)">
             <div class="file-upload-info">💡 ඔබ මුදල් තැන්පත් කළ බැංකු Slip පතේ හෝ App Screenshot එකේ Photo එක මෙහි තෝරන්න.</div>
             <div id="upload-status" style="color: #64748b;"></div>
         </div>
@@ -677,38 +677,43 @@
             document.getElementById('total-price').innerText = `Rs. ${total.toLocaleString()}`;
         }
 
-        // Freeimage.host API හරහා ස්වයංක්‍රීයව ෆොටෝ එක අප්ලෝඩ් කර ලින්ක් එක ලබාගැනීම
-        function uploadSlipToHost(input) {
+        // ImgBB API හරහා සෘජුවම බ්‍රව්සරයෙන් අප්ලෝඩ් කිරීම (CORS bypass සහිත ක්‍රමය)
+        function uploadSlipToImgBB(input) {
             if (input.files && input.files[0]) {
                 let file = input.files[0];
                 let statusDiv = document.getElementById('upload-status');
                 statusDiv.innerText = "⏳ Uploading slip image, please wait...";
                 statusDiv.style.color = "#0284c7";
 
-                let formData = new FormData();
-                formData.append("source", file);
-                formData.append("type", "file");
-                formData.append("action", "upload");
+                let reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function () {
+                    let base64Image = reader.result.split(',')[1];
+                    
+                    let formData = new FormData();
+                    formData.append("key", "6d207e0251142516421375d8e75e533d");
+                    formData.append("image", base64Image);
 
-                fetch("https://freeimage.host/api/1/upload?key=6d207e0251142516421375d8e75e533d", {
-                    method: "POST",
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.status_code === 200 && data.image && data.image.url) {
-                        uploadedSlipUrl = data.image.url;
-                        statusDiv.innerText = "✅ Slip uploaded successfully! (රූපය සාර්ථකව සම්බන්ධ විය)";
-                        statusDiv.style.color = "#16a34a";
-                    } else {
-                        statusDiv.innerText = "❌ Upload failed. Please try again or re-select image.";
+                    fetch("https://api.imgbb.com/1/upload", {
+                        method: "POST",
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            uploadedSlipUrl = data.data.url;
+                            statusDiv.innerText = "✅ Slip uploaded successfully! (රූපය සාර්ථකව සම්බන්ධ විය)";
+                            statusDiv.style.color = "#16a34a";
+                        } else {
+                            statusDiv.innerText = "❌ Upload failed: " + (data.error ? data.error.message : "Unknown error");
+                            statusDiv.style.color = "#dc2626";
+                        }
+                    })
+                    .catch(error => {
+                        statusDiv.innerText = "❌ Network error during upload.";
                         statusDiv.style.color = "#dc2626";
-                    }
-                })
-                .catch(error => {
-                    statusDiv.innerText = "❌ Network error during upload.";
-                    statusDiv.style.color = "#dc2626";
-                });
+                    });
+                };
             }
         }
 
