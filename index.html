@@ -99,7 +99,7 @@
             color: var(--primary);
         }
 
-        /* PAGE 1: HERO VIEW WITH bac.png BACKGROUND (MOBILE PERFECT FIT) */
+        /* PAGE 1: HERO VIEW WITH bac.png BACKGROUND & BLUR */
         #hero-page {
             height: 100vh;
             display: flex;
@@ -112,19 +112,17 @@
             overflow: hidden;
         }
 
-        /* Background Image Fixed for Mobile Screens without cutting */
+        /* Background Image with Blur Effect */
         #hero-page::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(180deg, rgba(13, 17, 23, 0.5) 0%, rgba(13, 17, 23, 0.8) 100%), 
-                        url('bac.png') no-repeat center center;
-            background-size: contain; /* මෙයින් පින්තූරය කැපී යාම වළක්වා මුළුමනින්ම ස්ක්‍රීන් එකට පෙන්වයි */
-            background-color: #0d1117; /* පින්තූරය නැති හිස් අවකාශයන් සඳහා ඝන අඳුරු පසුබිමක් ලබා දේ */
-            filter: blur(2px); /* අඩු බ්ලර් ප්‍රමාණයක් මඟින් පින්තූරය පැහැදිලිව තබා ගනී */
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(180deg, rgba(13, 17, 23, 0.6) 0%, rgba(13, 17, 23, 0.85) 100%), 
+                        url('bac.png') no-repeat center center/cover;
+            filter: blur(6px); /* මෙතැනින් Blur ප්‍රමාණය අඩු වැඩි කරගත හැක */
             z-index: -1;
         }
 
