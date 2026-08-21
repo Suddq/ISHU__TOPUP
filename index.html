@@ -3,77 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Fire Top-Up</title>
+    <title>ISHU TOPUP</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
             margin: 0;
             padding: 20px;
         }
         .container {
-            max-width: 400px;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 420px;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             margin: auto;
         }
         h2 {
             text-align: center;
-            color: #333;
+            color: #ff4757;
+            margin-bottom: 20px;
         }
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: bold;
+            color: #333;
         }
         input, select {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
             box-sizing: border-box;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        input:focus, select:focus {
+            border-color: #ff4757;
         }
         button {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             background-color: #25D366;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
         button:hover {
             background-color: #1ebe5d;
+        }
+        .note {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+            line-height: 1.4;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>Free Fire Top-Up</h2>
+    <h2>ISHU TOPUP</h2>
+    
     <div class="form-group">
-        <label for="uid">Player UID:</label>
-        <input type="text" id="uid" placeholder="ඔබේ Player UID එක ඇතුළත් කරන්න">
+        <label for="uid">Player ID (UID):</label>
+        <input type="text" id="uid" placeholder="ඔබේ Free Fire UID එක මෙහි ඇතුළත් කරන්න">
     </div>
     
     <div class="form-group">
-        <label for="package">패කේජය තෝරන්න (Select Package):</label>
+        <label for="package">Order Item (පැකේජය):</label>
         <select id="package">
-            <option value="100 Diamonds">100 Diamonds</option>
-            <option value="310 Diamonds">310 Diamonds</option>
-            <option value="520 Diamonds">520 Diamonds</option>
-            <option value="1060 Diamonds">1060 Diamonds</option>
+            <option value="Weekly Lite Membership - Rs. 130">Weekly Lite Membership - Rs. 130</option>
+            <option value="Weekly Membership - Rs. 450">Weekly Membership - Rs. 450</option>
+            <option value="100 Diamonds - Rs. 180">100 Diamonds - Rs. 180</option>
+            <option value="310 Diamonds - Rs. 540">310 Diamonds - Rs. 540</option>
+            <option value="520 Diamonds - Rs. 900">520 Diamonds - Rs. 900</option>
         </select>
     </div>
 
     <button onclick="sendOrder()">WhatsApp හරහා Order කරන්න</button>
+    
+    <div class="note">
+        ማስታุดුව: Order කළ පසු ලැබෙන WhatsApp චැට් එකට ඔබේ මුදල් ගෙවූ Slip එක එවන්න.
+    </div>
 </div>
 
 <script>
@@ -81,7 +103,8 @@
         const uid = document.getElementById('uid').value.trim();
         const selectedPackage = document.getElementById('package').value;
         
-        // මෙතනට ඔබේ WhatsApp අංකය දාන්න (உதாரණයක් ලෙස: 94771234567 - රටේ කේතය සමඟ)
+        // ⚠️ වැදගත්: පහත '947XXXXXXXX' වෙනුවට ඔබේ සැබෑ WhatsApp අංකය (රටේ කේතය සමඟ) යොදන්න.
+        // උදාහරණයක් ලෙස: 94771234567
         const whatsappNumber = "947XXXXXXXX"; 
 
         if (uid === "") {
@@ -89,8 +112,8 @@
             return;
         }
 
-        // WhatsApp එකට යැවෙන පණිවිඩය සකස් කිරීම
-        const message = `Halo, මම Free Fire Top-up එකක් කිරීමට අවශ්‍යයි.%0A%0A*Player UID:* ${uid}%0A*Package:* ${selectedPackage}`;
+        // WhatsApp එකට යැවෙන පණිවිඩයේ ආකෘතිය
+        const message = `*NEW ORDER - ISHU TOPUP*%0A%0A*Player ID (UID):* ${uid}%0A*ORDER ITEM:* ${selectedPackage}%0A%0A*මම මුදල් තැන්පත් කර ඇත. මෙන්න ස්ලිප් එක:*`;
 
         // WhatsApp ලින්ක් එක විවෘත කිරීම
         const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
