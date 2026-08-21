@@ -99,7 +99,7 @@
             color: var(--primary);
         }
 
-        /* PAGE 1: HERO VIEW WITH bac.png BACKGROUND (MOBILE OPTIMIZED) */
+        /* PAGE 1: HERO VIEW WITH bac.png BACKGROUND (MOBILE PERFECT FIT) */
         #hero-page {
             height: 100vh;
             display: flex;
@@ -112,7 +112,7 @@
             overflow: hidden;
         }
 
-        /* Background Image with Mobile-Friendly Blur & Size */
+        /* Background Image Fixed for Mobile Screens without cutting */
         #hero-page::before {
             content: '';
             position: absolute;
@@ -120,10 +120,11 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(180deg, rgba(13, 17, 23, 0.3) 0%, rgba(13, 17, 23, 0.75) 100%), 
+            background: linear-gradient(180deg, rgba(13, 17, 23, 0.5) 0%, rgba(13, 17, 23, 0.8) 100%), 
                         url('bac.png') no-repeat center center;
-            background-size: cover;
-            filter: blur(4px); /* ෆෝන් එකට පැහැදිලිව පෙනෙන පරිදි blur ප්‍රමාණය සකසා ඇත */
+            background-size: contain; /* මෙයින් පින්තූරය කැපී යාම වළක්වා මුළුමනින්ම ස්ක්‍රීන් එකට පෙන්වයි */
+            background-color: #0d1117; /* පින්තූරය නැති හිස් අවකාශයන් සඳහා ඝන අඳුරු පසුබිමක් ලබා දේ */
+            filter: blur(2px); /* අඩු බ්ලර් ප්‍රමාණයක් මඟින් පින්තූරය පැහැදිලිව තබා ගනී */
             z-index: -1;
         }
 
