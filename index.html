@@ -94,7 +94,7 @@
     <button onclick="sendOrder()">WhatsApp හරහා Order කරන්න</button>
     
     <div class="note">
-        ማስታุดුව: Order කළ පසු ලැබෙන WhatsApp චැට් එකට ඔබේ මුදල් ගෙවූ Slip එක එවන්න.
+        ማስታุดුව: Order බටන් එක ක්ලික් කළ පසු විවෘත වන WhatsApp චැට් එකට ඔබේ පේමන්ට් ස්ලිප් එක (Photo එක) attach කර එවන්න.
     </div>
 </div>
 
@@ -113,7 +113,7 @@
         }
 
         // WhatsApp එකට යැවෙන පණිවිඩයේ ආකෘතිය
-        const message = `*NEW ORDER - ISHU TOPUP*%0A%0A*Player ID (UID):* ${uid}%0A*ORDER ITEM:* ${selectedPackage}%0A%0A*මම මුදල් තැන්පත් කර ඇත. මෙන්න ස්ලිප් එක:*`;
+        const message = `*NEW ORDER - ISHU TOPUP*%0A%0A*Player ID (UID):* ${uid}%0A*ORDER ITEM:* ${selectedPackage}%0A%0A*මම මුදල් තැන්පත් කර ඇත. මෙන්න මගේ පේමන්ට් ස්ලිප් එක:*`;
 
         // WhatsApp ලින්ක් එක විවෘත කිරීම
         const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
