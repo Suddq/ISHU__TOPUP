@@ -59,13 +59,19 @@
             cursor: pointer;
         }
 
-        .nav-logo {
+        /* Professional CSS Logo Icon */
+        .nav-logo-icon {
             width: 40px;
             height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--primary);
-            background-color: #1e293b;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 900;
+            color: #fff;
+            box-shadow: 0 0 10px rgba(0, 210, 255, 0.4);
         }
 
         .logo {
@@ -111,15 +117,19 @@
                         url('https://freefiremobile-a.akamaihd.net/ffwebsite/images/freefire_bg.jpg') no-repeat center center/cover;
         }
 
-        .hero-logo {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--primary);
-            box-shadow: 0 0 25px rgba(0, 210, 255, 0.5);
-            margin-bottom: 15px;
-            background-color: #1e293b;
+        .hero-logo-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            font-weight: 900;
+            color: #fff;
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.6);
+            margin: 0 auto 15px auto;
         }
 
         .badge {
@@ -208,15 +218,19 @@
             border: 1px solid #e2e8f0;
         }
 
-        .header-logo-img {
-            width: 85px;
-            height: 85px;
-            border-radius: 16px;
-            object-fit: cover;
-            border: 2px solid #0072ff;
-            box-shadow: 0 8px 20px rgba(0, 114, 255, 0.35);
+        .header-logo-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-dark), #1e293b);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 900;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3);
             flex-shrink: 0;
-            background-color: #1e293b;
         }
 
         .game-info h2 {
@@ -530,7 +544,6 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 36px; }
-            .hero-logo { width: 85px; height: 85px; }
             .grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
             .card { padding: 14px 8px; }
             .card-img { width: 70px; height: 55px; }
@@ -546,7 +559,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo-container" onclick="openHeroPage()">
-            <img src="https://raw.githubusercontent.com/Suddq/ISHU_TOPUP/main/my.png" class="nav-logo" alt="Logo" onerror="this.src='https://via.placeholder.com/40/00d2ff/ffffff?text=IT'">
+            <div class="nav-logo-icon">IT</div>
             <div class="logo">ISHU <span>TOPUP</span></div>
         </div>
         <ul class="nav-links">
@@ -558,7 +571,7 @@
     <!-- PAGE 1: HERO VIEW -->
     <section id="hero-page">
         <div class="hero">
-            <img src="https://raw.githubusercontent.com/Suddq/ISHU_TOPUP/main/my.png" class="hero-logo" alt="Logo" onerror="this.src='https://via.placeholder.com/100/00d2ff/ffffff?text=ISHU'">
+            <div class="hero-logo-icon">IT</div>
             <div class="badge">SRI LANKA'S #1 GAME TOP-UP PLATFORM</div>
             <h1>ISHU <span>TOPUP</span></h1>
             <p>Premium game top-ups at <b>unbeatable prices</b> — instant delivery, trusted by Sri Lankan gamers.</p>
@@ -569,7 +582,7 @@
     <!-- PAGE 2: STORE VIEW -->
     <section id="store-page">
         <div class="game-header-card">
-            <img src="https://raw.githubusercontent.com/Suddq/ISHU_TOPUP/main/my.png" class="header-logo-img" alt="Logo" onerror="this.src='https://via.placeholder.com/85/0072ff/ffffff?text=ISHU'">
+            <div class="header-logo-icon">IT</div>
             <div class="game-info">
                 <h2>ISHU <span>TOPUP</span></h2>
                 <p>Sri Lanka's #1 Game Top-Up Platform | 100% Safe & Instant Delivery</p>
@@ -744,7 +757,7 @@
         function sendToWhatsApp() {
             let playerId = document.getElementById('player-id').value.trim();
             if (!playerId) { alert("කරුණාකර ප්‍රථමයෙන් ඔබේ Player ID (UID) එක ඇතුළත් කරන්න!"); document.getElementById('player-id').focus(); return; }
-            if (!uploadedSlipUrl) { alert("කරුණාකර ඔබේ ගෙවීම් Slip පත (Photo එක) Upload කරන්න!"); return; }
+            if (!uploadedSlipUrl) { alert("කරුණﺎකර ඔබේ ගෙවීම් Slip පත (Photo එක) Upload කරන්න!"); return; }
             
             let selectedItems = [], totalBill = 0;
             document.querySelectorAll('.card').forEach(card => {
