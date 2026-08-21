@@ -24,8 +24,7 @@
         .logo-container { display: flex; align-items: center; gap: 12px; cursor: pointer; }
         .nav-logo {
             width: 50px; height: 50px; border-radius: 50%; object-fit: cover;
-            border: 2px solid var(--primary); background: #1e293b;
-            display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary);
+            border: 2px solid var(--primary); background: #00d2ff15;
         }
         .logo { font-size: 20px; font-weight: 800; color: #ffffff; letter-spacing: 1px; }
         .logo span { color: var(--primary); }
@@ -42,7 +41,7 @@
         .hero-logo {
             width: 150px; height: 150px; border-radius: 50%; object-fit: cover;
             border: 4px solid var(--primary); box-shadow: 0 0 30px rgba(0, 210, 255, 0.6);
-            margin-bottom: 20px; background: #1e293b; display: flex; align-items: center; justify-content: center;
+            margin-bottom: 20px; background: #00d2ff15;
         }
         .badge {
             background: rgba(0, 210, 255, 0.15); border: 1px solid var(--primary);
@@ -105,8 +104,8 @@
 
     <nav class="navbar">
         <div class="logo-container" onclick="openHeroPage()">
-            <!-- මෙතන GitHub image link එක වෙනුවට direct link එකක් හෝ placeholder එකක් පාවිච්චි කළ හැක -->
-            <img src="https://i.ibb.co/3m7443Z/my.png" class="nav-logo" alt="Logo" onerror="this.style.display='none';">
+            <!-- මෙතැනට ඔයාගේ ෆෝල්ඩර් එකේ ඇති my.png ලෝගෝ එක සම්බන්ධ වේ -->
+            <img src="my.png" class="nav-logo" alt="Logo">
             <div class="logo">ISHU <span>TOPUP</span></div>
         </div>
         <ul class="nav-links">
@@ -117,7 +116,7 @@
 
     <section id="hero-page">
         <div class="hero">
-            <img src="https://i.ibb.co/3m7443Z/my.png" class="hero-logo" alt="Logo" onerror="this.style.display='none';">
+            <img src="my.png" class="hero-logo" alt="Logo">
             <div class="badge">SRI LANKA'S #1 GAME TOP-UP PLATFORM</div>
             <h1>ISHU <span>TOPUP</span></h1>
             <p>Premium game top-ups at <b>unbeatable prices</b> — instant delivery, trusted by Sri Lankan gamers.</p>
@@ -127,7 +126,7 @@
 
     <section id="store-page">
         <div class="game-header-card">
-            <img src="https://i.ibb.co/3m7443Z/my.png" class="header-logo-img" alt="Logo" onerror="this.style.display='none';">
+            <img src="my.png" class="header-logo-img" alt="Logo">
             <div class="game-info">
                 <h2>ISHU <span>TOPUP</span></h2>
                 <p>Sri Lanka's #1 Game Top-Up Platform | 100% Safe & Instant Delivery</p>
@@ -186,10 +185,10 @@
 
         <div class="category-header">💎 Diamond Top-Up Packages</div>
         <div class="grid">
-            <div class="card" data-title="25 Diamonds" data-price="70"><img src="https://i.ibb.co/6Z80v5x/diamond.png" class="card-img"><div class="card-title">25 Diamonds</div><div class="card-price">Rs. 70</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="50 Diamonds" data-price="130"><img src="https://i.ibb.co/6Z80v5x/diamond.png" class="card-img"><div class="card-title">50 Diamonds</div><div class="card-price">Rs. 130</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="115 Diamonds" data-price="260"><img src="https://i.ibb.co/6Z80v5x/diamond.png" class="card-img"><div class="card-title">115 Diamonds</div><div class="card-price">Rs. 260</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
-            <div class="card" data-title="240 Diamonds" data-price="520"><img src="https://i.ibb.co/6Z80v5x/diamond.png" class="card-img"><div class="card-title">240 Diamonds</div><div class="card-price">Rs. 520</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="25 Diamonds" data-price="70"><img src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/rebate/0000/000/002/logo.png" class="card-img"><div class="card-title">25 Diamonds</div><div class="card-price">Rs. 70</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="50 Diamonds" data-price="130"><img src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/rebate/0000/000/002/logo.png" class="card-img"><div class="card-title">50 Diamonds</div><div class="card-price">Rs. 130</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="115 Diamonds" data-price="260"><img src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/rebate/0000/000/002/logo.png" class="card-img"><div class="card-title">115 Diamonds</div><div class="card-price">Rs. 260</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
+            <div class="card" data-title="240 Diamonds" data-price="520"><img src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/rebate/0000/000/002/logo.png" class="card-img"><div class="card-title">240 Diamonds</div><div class="card-price">Rs. 520</div><div class="qty-controls"><button class="qty-btn" onclick="updateQty(this, -1)">-</button><span class="qty-count">0</span><button class="qty-btn" onclick="updateQty(this, 1)">+</button></div></div>
         </div>
 
         <div class="slip-upload-section">
