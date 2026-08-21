@@ -110,6 +110,17 @@
                         url('https://freefiremobile-a.akamaihd.net/ffwebsite/images/freefire_bg.jpg') no-repeat center center/cover;
         }
 
+        /* Hero Main Logo Styling */
+        .hero-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 25px rgba(0, 210, 255, 0.5);
+            margin-bottom: 15px;
+        }
+
         .badge {
             background: rgba(0, 210, 255, 0.15);
             border: 1px solid var(--primary);
@@ -517,6 +528,7 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 36px; }
+            .hero-logo { width: 85px; height: 85px; }
             .grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
             .card { padding: 14px 8px; }
             .card-img { width: 70px; height: 55px; }
@@ -544,6 +556,7 @@
     <!-- PAGE 1: HERO VIEW -->
     <section id="hero-page">
         <div class="hero">
+            <img src="https://raw.githubusercontent.com/Suddq/ISHU_TOPUP/main/Copilot_20260821_172448.png" class="hero-logo" alt="Logo">
             <div class="badge">SRI LANKA'S #1 GAME TOP-UP PLATFORM</div>
             <h1>ISHU <span>TOPUP</span></h1>
             <p>Premium game top-ups at <b>unbeatable prices</b> — instant delivery, trusted by Sri Lankan gamers.</p>
