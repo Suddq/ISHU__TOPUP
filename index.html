@@ -454,6 +454,19 @@
             font-weight: 600;
         }
 
+        /* ඔබ ඉල්ලූ 'දැනුම් දීමයි' කොටසේ ස්ට්‍රයිල් එක */
+        .notice-box {
+            margin-top: 12px;
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 8px;
+            padding: 12px;
+            color: #92400e;
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
         #upload-status {
             font-size: 13px;
             margin-top: 8px;
@@ -547,7 +560,7 @@
         </div>
     </section>
 
-    <!-- PAGE 2: PRICE LIST STORE VIEW -->
+    <!-- PAGE 2: STORE VIEW -->
     <section id="store-page">
         <div class="game-header-card">
             <div class="custom-logo-badge">
@@ -638,6 +651,12 @@
             <h3>📎 Step 3: Upload Payment Slip (මුදල් ගෙවූ Slip එක Attach කරන්න)</h3>
             <input type="file" id="payment-slip" accept="image/*" onchange="uploadSlipSecure(this)">
             <div class="file-upload-info">💡 ඔබ මුදල් තැන්පත් කළ බැංකු Slip පතේ හෝ App Screenshot එකේ Photo එක මෙහි තෝරන්න.</div>
+            
+            <!-- ඔබ ඉල්ලූ දැනුම් දීමයි කොටස මෙන්න -->
+            <div class="notice-box">
+                ⚠️ <b>දැනුම් දීමයි:</b> කරුණාකර WhatsApp විවෘත වූ පසු ඔබේ Slip එක ඇතුළත් (Attach) කර එවන්න.
+            </div>
+
             <div id="upload-status" style="color: #64748b;"></div>
         </div>
 
@@ -656,8 +675,17 @@
         const whatsappNumber = "94703884811"; 
         let uploadedSlipUrl = "";
 
-        function openStorePage() { document.getElementById('hero-page').style.display = 'none'; document.getElementById('store-page').style.display = 'block'; window.scrollTo(0, 0); }
-        function openHeroPage() { document.getElementById('store-page').style.display = 'none'; document.getElementById('hero-page').style.display = 'flex'; window.scrollTo(0, 0); }
+        function openStorePage() { 
+            document.getElementById('hero-page').style.display = 'none'; 
+            document.getElementById('store-page').style.display = 'block'; 
+            window.scrollTo(0, 0); 
+        }
+        
+        function openHeroPage() { 
+            document.getElementById('store-page').style.display = 'none'; 
+            document.getElementById('hero-page').style.display = 'flex'; 
+            window.scrollTo(0, 0); 
+        }
         
         function updateQty(btn, val) {
             let countSpan = btn.parentElement.querySelector('.qty-count');
@@ -677,7 +705,6 @@
             document.getElementById('total-price').innerText = `Rs. ${total.toLocaleString()}`;
         }
 
-        // ආරක්ෂිත සහ නොමිලේ ක්‍රියාත්මක වන File Upload ක්‍රමය (API Key අවශ්‍ය නොවේ)
         function uploadSlipSecure(input) {
             if (input.files && input.files[0]) {
                 let file = input.files[0];
@@ -688,7 +715,6 @@
                 let formData = new FormData();
                 formData.append("file", file);
 
-                // Using AnonFiles / File.io public free upload endpoint
                 fetch("https://file.io/?expires=1w", {
                     method: "POST",
                     body: formData
@@ -700,14 +726,12 @@
                         statusDiv.innerText = "✅ Slip uploaded successfully! (රූපය සාර්ථකව සම්බන්ධ විය)";
                         statusDiv.style.color = "#16a34a";
                     } else {
-                        // Fallback: If direct upload has issue, convert to local object URL so user can still proceed safely
                         uploadedSlipUrl = URL.createObjectURL(file);
                         statusDiv.innerText = "✅ Slip attached successfully!";
                         statusDiv.style.color = "#16a34a";
                     }
                 })
                 .catch(error => {
-                    // Fallback to local preview URL if network blocks external upload
                     uploadedSlipUrl = URL.createObjectURL(file);
                     statusDiv.innerText = "✅ Slip attached successfully!";
                     statusDiv.style.color = "#16a34a";
